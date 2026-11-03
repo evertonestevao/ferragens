@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ferraço Forte</title>
+<meta name="description" content="Ferraço Forte – Serralheria artística e metalurgia qualificada. Portões, grades, coberturas, estruturas metálicas e projetos sob medida.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0f11;--bg2:#17191c;--card:#1e2125;--fg:#eef0f2;--mut:#9aa1a9;--steel:#b8bec6;--acc:#e8732a;--line:#2b2f34}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.logo{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.03em}
+.wrap{max-width:1140px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(14,15,17,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-size:1.5rem;font-weight:700}.logo span{color:var(--acc)}
+.menu{display:flex;gap:28px;font-size:.95rem;color:var(--mut)}.menu a:hover{color:var(--fg)}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:13px 26px;border-radius:6px;font-weight:600;transition:.2s}
+.btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn.ghost{background:none;border:1px solid var(--steel)}
+.hero{min-height:88vh;display:flex;align-items:center;background:
+linear-gradient(100deg,rgba(14,15,17,.97) 35%,rgba(14,15,17,.6)),
+url(/img/hero.jpg) center/cover;border-bottom:4px solid var(--acc)}
+.hero small{color:var(--acc);font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.hero h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;margin:14px 0 20px;max-width:780px}
+.hero p{color:var(--mut);max-width:560px;font-size:1.1rem;margin-bottom:32px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+section{padding:96px 0}
+.tag{color:var(--acc);font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:.8rem}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:8px 0 18px}
+.lead{color:var(--mut);max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:44px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px;transition:.25s}
+.card:hover{border-color:var(--acc);transform:translateY(-4px)}
+.card .ic{font-size:2rem;margin-bottom:14px}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.card p{color:var(--mut);font-size:.95rem}
+.alt{background:var(--bg2)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.badge{aspect-ratio:1;border-radius:50%;max-width:380px;margin:auto;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#d3d7dc,#7d838a);color:#2a2d31;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.badge div{text-align:center;font-family:Oswald;line-height:1}
+.badge b{font-size:4rem;display:block}.badge i{font-style:normal;letter-spacing:.5em;font-size:1.1rem}
+.checks{list-style:none;margin-top:24px;display:grid;gap:12px}
+.checks li::before{content:"✔";color:var(--acc);margin-right:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
+.stats b{font-family:Oswald;font-size:2.3rem;color:var(--acc);display:block}
+.stats span{color:var(--mut);font-size:.9rem}
+.steps{counter-reset:s}
+.steps .card h3::before{counter-increment:s;content:"0" counter(s);display:block;color:var(--acc);font-size:2.2rem}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:40px}
+.gal div{aspect-ratio:4/3;border-radius:8px;display:flex;align-items:flex-end;padding:14px;font-weight:600;border:1px solid var(--line);
+background:linear-gradient(to top,rgba(0,0,0,.75),transparent 60%),repeating-linear-gradient(90deg,#2c3035 0 6px,#1a1c1f 6px 26px)}
+.gal div:nth-child(even){background:linear-gradient(to top,rgba(0,0,0,.75),transparent 60%),repeating-linear-gradient(0deg,#2c3035 0 6px,#1a1c1f 6px 22px)}
+.cta{text-align:center;background:linear-gradient(135deg,#e8732a,#b44d12);border-radius:14px;padding:64px 24px}
+.cta h2{color:#fff}.cta p{color:#ffe6d6;margin-bottom:28px}
+.cta .btn{background:#fff;color:#b44d12}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:40px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mut);font-size:.9rem;text-align:center}
+.wa{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;font-size:1.8rem;box-shadow:0 8px 24px rgba(0,0,0,.5);z-index:20}
+@media(max-width:800px){.menu{display:none}.about{grid-template-columns:1fr}section{padding:70px 0}}
+</style>
+</head>
+<body>
+<header><nav class="wrap">
+<a href="#" class="logo">Ferraço<span>Forte</span></a>
+<div class="menu"><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#processo">Como trabalhamos</a><a href="#trabalhos">Trabalhos</a><a href="#contato">Contato</a></div>
+<a class="btn" href="https://wa.me/5511900000000" target="_blank">Orçamento</a>
+</nav></header>
+
+<section class="hero"><div class="wrap">
+<small>Serralheria artística & metalurgia</small>
+<h1>Ferro, aço e acabamento feitos sob medida para você</h1>
+<p>Portões, grades, coberturas e estruturas metálicas com a precisão de um metalúrgico qualificado e o cuidado de um serralheiro artístico.</p>
+<div class="ctas"><a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank">Solicitar orçamento grátis</a><a class="btn ghost" href="#servicos">Ver serviços</a></div>
+</div></section>
+
+<section id="servicos"><div class="wrap">
+<span class="tag">O que fazemos</span><h2>Nossos serviços</h2>
+<p class="lead">Do projeto à instalação, cada peça é fabricada sob medida, com solda de qualidade e acabamento resistente ao tempo.</p>
+<div class="grid">
+<div class="card"><div class="ic">🚪</div><h3>Portões</h3><p>Portões basculantes, de correr, pivotantes e sociais, prontos para automação.</p></div>
+<div class="card"><div class="ic">🛡️</div><h3>Grades e gradis</h3><p>Grades de janela, muro e proteção com design moderno ou clássico.</p></div>
+<div class="card"><div class="ic">🏠</div><h3>Coberturas</h3><p>Coberturas em policarbonato, telha termoacústica e estruturas para garagens e áreas gourmet.</p></div>
+<div class="card"><div class="ic">🏗️</div><h3>Estruturas metálicas</h3><p>Mezaninos, vigas, pilares e estruturas para obras residenciais e comerciais.</p></div>
+<div class="card"><div class="ic">🎨</div><h3>Serralheria artística</h3><p>Peças decorativas, painéis vazados e detalhes exclusivos que valorizam o ambiente.</p></div>
+<div class="card"><div class="ic">🪜</div><h3>Escadas e corrimãos</h3><p>Escadas metálicas, guarda-corpos e corrimãos com segurança e estilo.</p></div>
+<div class="card"><div class="ic">🔗</div><h3>Alambrados e telas</h3><p>Fechamentos com tela para quadras, terrenos, chácaras e canis.</p></div>
+<div class="card"><div class="ic">🔧</div><h3>Manutenção e reparos</h3><p>Soldas, reformas, troca de peças e pintura de estruturas existentes.</p></div>
+</div></div></section>
+
+<section id="sobre" class="alt"><div class="wrap about">
+<img src="/img/sobre.jpg" alt="Serralheiro trabalhando" style="width:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)">
+<div>
+<span class="tag">Quem somos</span><h2>Qualidade de quem entende de metal</h2>
+<p class="lead">A Ferraço Forte é comandada por Carlos Mendes, metalúrgico qualificado e serralheiro artístico. Unimos técnica de metalurgia com olhar criativo para entregar trabalhos duráveis, bonitos e funcionais.</p>
+<ul class="checks"><li>Metalúrgico qualificado</li><li>Projetos 100% sob medida</li><li>Orçamento sem compromisso</li><li>Atendimento direto com o profissional</li></ul>
+<div class="stats"><div><b>150+</b><span>trabalhos publicados</span></div><div><b>100%</b><span>sob medida</span></div><div><b>1:1</b><span>atendimento direto</span></div></div>
+</div></div></section>
+
+<section id="processo"><div class="wrap">
+<span class="tag">Como trabalhamos</span><h2>Do contato à entrega</h2>
+<div class="grid steps">
+<div class="card"><h3>Contato</h3><p>Você nos chama no WhatsApp e conta sua ideia.</p></div>
+<div class="card"><h3>Medição</h3><p>Visitamos o local, tiramos medidas e entendemos a necessidade.</p></div>
+<div class="card"><h3>Orçamento</h3><p>Proposta clara, com materiais e prazo definidos.</p></div>
+<div class="card"><h3>Fabricação & instalação</h3><p>Produzimos na oficina e instalamos com acabamento caprichado.</p></div>
+</div></div></section>
+
+<section id="trabalhos" class="alt"><div class="wrap">
+<span class="tag">Portfólio</span><h2>Trabalhos realizados</h2>
+<p class="lead">Confira mais fotos e vídeos dos nossos projetos no Instagram.</p>
+<div class="gal"><div style="background-image:linear-gradient(to top,rgba(0,0,0,.8),transparent 55%),url(/img/portao.jpg);background-size:cover;background-position:center">Portão residencial</div><div style="background-image:linear-gradient(to top,rgba(0,0,0,.8),transparent 55%),url(/img/cobertura.jpg);background-size:cover;background-position:center">Cobertura em policarbonato</div><div style="background-image:linear-gradient(to top,rgba(0,0,0,.8),transparent 55%),url(/img/alambrado.jpg);background-size:cover;background-position:center">Alambrado</div><div style="background-image:linear-gradient(to top,rgba(0,0,0,.8),transparent 55%),url(/img/grade.jpg);background-size:cover;background-position:center">Grade de proteção</div><div style="background-image:linear-gradient(to top,rgba(0,0,0,.8),transparent 55%),url(/img/estrutura.jpg);background-size:cover;background-position:center">Estrutura metálica</div><div style="background-image:linear-gradient(to top,rgba(0,0,0,.8),transparent 55%),url(/img/artistica.jpg);background-size:cover;background-position:center">Peça artística</div></div>
+<p style="margin-top:30px"><a class="btn ghost" href="https://www.instagram.com/" target="_blank">📸 Ver no Instagram @ferracoforte</a></p>
+</div></section>
+
+<section id="contato"><div class="wrap">
+<div class="cta"><h2>Vamos tirar seu projeto do papel?</h2><p>Peça seu orçamento agora mesmo, sem compromisso.</p><a class="btn" href="https://wa.me/5511900000000" target="_blank">💬 Chamar no WhatsApp</a></div>
+<div class="contact">
+<div class="card"><div class="ic">📱</div><h3>WhatsApp</h3><p><a href="https://wa.me/5511900000000">(11) 90000-0000</a></p></div>
+<div class="card"><div class="ic">📸</div><h3>Instagram</h3><p><a href="https://www.instagram.com/">@ferracoforte</a></p></div>
+<div class="card"><div class="ic">👤</div><h3>Responsável</h3><p><a href="https://www.instagram.com/">Carlos Mendes</a></p></div>
+</div></div></section>
+
+<footer>© 2026 Ferraço Forte · Serralheria Artística & Metalurgia</footer>
+<a class="wa" href="https://wa.me/5511900000000" target="_blank" aria-label="WhatsApp">💬</a>
+</body>
+</html>
